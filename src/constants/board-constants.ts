@@ -1,4 +1,4 @@
-import kaboomCtx from '../kaboomCtx';
+import { gameKaboomCtx } from '../kaboomCtx';
 import { Coordinate } from '../types/Coordinate';
 
 export enum BoardMainMeasurements {
@@ -9,8 +9,8 @@ export enum BoardMainMeasurements {
 }
 
 export enum BoardCoordinates {
-    X = kaboomCtx.center().x - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2),
-    Y = kaboomCtx.center().y - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2)
+    X = gameKaboomCtx.center().x - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2),
+    Y = gameKaboomCtx.center().y - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2)
 }
 
 export enum InsideBoardCoordinates {

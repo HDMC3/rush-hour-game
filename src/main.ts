@@ -1,8 +1,8 @@
-import kaboomCtx from './kaboomCtx';
+import { gameKaboomCtx } from './kaboomCtx';
 import { GameScene } from './scenes/GameScene';
 
 const gameScene = new GameScene();
 
-kaboomCtx.scene(gameScene.id, gameScene.sceneDef);
+gameKaboomCtx.scene(gameScene.id, gameScene.sceneDef);
 
-kaboomCtx.go(gameScene.id);
+gameKaboomCtx.go(gameScene.id);
