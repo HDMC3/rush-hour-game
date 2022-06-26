@@ -1,12 +1,16 @@
-import { SceneDef } from 'kaboom';
+import { KaboomCtx, SceneDef } from 'kaboom';
+import { Board } from '../game-objects/Board';
 
 export class GameScene {
-    id: string;
+    readonly id: string;
 
-    constructor() {
+    constructor(private kaboomCtx: KaboomCtx) {
         this.id = 'GameScene';
     }
 
-    sceneDef: SceneDef = () => { };
+    readonly sceneDef: SceneDef = async() => {
+        const board = new Board(this.kaboomCtx);
+        await board.addGameObject();
+    };
 
 }
