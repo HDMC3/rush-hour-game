@@ -1,0 +1,799 @@
+[
+    {
+        "levelNumber": 1,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 5
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "Q",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 0
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "CL3",
+            "OD3",
+            "AR1",
+            "PU1",
+            "BU1",
+            "RL2",
+            "QD2",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 2,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "O",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 2
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "EL1",
+            "PD2",
+            "XR1",
+            "AD1",
+            "OL3",
+            "CU2",
+            "BU1",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 3,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 5
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 4
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 2
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 3
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "PU3",
+            "OU2",
+            "CR2",
+            "AR3",
+            "OD3",
+            "XR1",
+            "BU4",
+            "XL1",
+            "OU3",
+            "CL3",
+            "AL3",
+            "PD3",
+            "OD3",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 4,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 5
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 3
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 4
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "OD3",
+            "XL1",
+            "AU3",
+            "XR1",
+            "OU3",
+            "RL2",
+            "QL3",
+            "PD3",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 5,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 5
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "Q",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 0
+            },
+            {
+                "carId": "G",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "EL3",
+            "GD1",
+            "FL3",
+            "QD2",
+            "AR1",
+            "PU1",
+            "RL1",
+            "OD3",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 6,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 2
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 3
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "XL1",
+            "EU3",
+            "DR1",
+            "FU1",
+            "RL3",
+            "PD2",
+            "OD2",
+            "QD1",
+            "XR6"
+        ]
+    },
+    {
+        "levelNumber": 7,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 1
+            },
+            {
+                "carId": "B",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "I",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 3
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "H",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "FD1",
+            "DD1",
+            "CD3",
+            "BR2",
+            "EU1",
+            "XR1",
+            "AD3",
+            "XL1",
+            "ED1",
+            "BL3",
+            "DU1",
+            "EU1",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 8,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "K",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "B",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "P",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 3
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "carId": "I",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 2
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 0
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "AL3",
+            "CU1",
+            "BL2",
+            "EU2",
+            "DU2",
+            "XR3",
+            "IU2",
+            "QL1",
+            "PL1",
+            "GL1",
+            "OD3",
+            "XR3"
+        ]
+    },
+    {
+        "levelNumber": 9,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "B",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "carId": "G",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 2
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            },
+            {
+                "carId": "H",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 4
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "OD1",
+            "XR1",
+            "PU3",
+            "QL1",
+            "DD2",
+            "XR2",
+            "AD1",
+            "EL1",
+            "BL1",
+            "CL1",
+            "FU2",
+            "XR3"
+        ]
+    },
+    {
+        "levelNumber": 10,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 5
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 0,
+        "solution": [
+            "CL1",
+            "OU1",
+            "QR2",
+            "XR2",
+            "BD4",
+            "DR1",
+            "AR1",
+            "PU2",
+            "QL3",
+            "XL2",
+            "EU3",
+            "HL1",
+            "FL1",
+            "OD3",
+            "CR1",
+            "EU1",
+            "XR5"
+        ]
+    }
+]
