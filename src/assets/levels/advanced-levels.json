@@ -182,62 +182,62 @@
             {
                 "carId": "O",
                 "orientation": "horizontal",
-                "x": 5,
+                "x": 2,
                 "y": 0
             },
             {
                 "carId": "Q",
                 "orientation": "horizontal",
-                "x": 3,
+                "x": 2,
                 "y": 5
             },
             {
                 "carId": "B",
                 "orientation": "horizontal",
-                "x": 2,
+                "x": 3,
                 "y": 1
             },
             {
                 "carId": "X",
                 "orientation": "horizontal",
-                "x": 0,
+                "x": 3,
                 "y": 2
             },
             {
                 "carId": "E",
                 "orientation": "horizontal",
-                "x": 3,
-                "y": 2
+                "x": 4,
+                "y": 3
             },
             {
                 "carId": "F",
                 "orientation": "horizontal",
-                "x": 0,
-                "y": 3
+                "x": 4,
+                "y": 4
             },
             {
                 "carId": "A",
                 "orientation": "vertical",
-                "x": 3,
-                "y": 0
+                "x": 2,
+                "y": 1
             },
             {
                 "carId": "C",
                 "orientation": "vertical",
-                "x": 4,
-                "y": 1
+                "x": 2,
+                "y": 3
             },
             {
                 "carId": "D",
                 "orientation": "vertical",
-                "x": 2,
-                "y": 2
+                "x": 3,
+                "y": 3
             },
             {
                 "carId": "P",
                 "orientation": "vertical",
-                "x": 3,
-                "y": 4
+                "x": 5,
+                "y": 0
             }
         ],
         "difficulty": 2,
@@ -754,7 +754,7 @@
             },
             {
                 "carId": "Q",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 5,
                 "y": 3
             }

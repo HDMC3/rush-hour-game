@@ -499,13 +499,13 @@
             },
             {
                 "carId": "F",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 4,
                 "y": 4
             },
             {
                 "carId": "P",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 5,
                 "y": 0
             },
@@ -628,7 +628,7 @@
             },
             {
                 "carId": "Q",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 5,
                 "y": 1
             },
@@ -879,7 +879,7 @@
             },
             {
                 "carId": "R",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 5,
                 "y": 2
             },
@@ -1167,7 +1167,7 @@
             },
             {
                 "carId": "P",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 5,
                 "y": 1
             }

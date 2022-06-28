@@ -374,7 +374,7 @@
             },
             {
                 "carId": "Q",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "x": 3,
                 "y": 2
             },
@@ -435,7 +435,7 @@
                 "carId": "X",
                 "orientation": "horizontal",
                 "x": 1,
-                "y": 1
+                "y": 2
             },
             {
                 "carId": "B",

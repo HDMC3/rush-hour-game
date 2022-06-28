@@ -707,7 +707,7 @@
             },
             {
                 "carId": "D",
-                "orientation": "vertical",
+                "orientation": "horizontal",
                 "x": 1,
                 "y": 4
             },
