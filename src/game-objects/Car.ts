@@ -91,10 +91,16 @@ export class Car {
         this.kaboomCtx.onMouseMove(() => {
             if (!this.gameObject) return;
 
-            this.kaboomCtx.cursor(this.gameObject.isHovering() || this.isDragging ? 'pointer' : 'default');
-            this.gameObject.color = this.gameObject.isHovering() || this.isDragging
+            this.kaboomCtx.cursor(this.isDragging ? 'pointer' : 'default');
+            this.gameObject.color = this.isDragging
                 ? this.kaboomCtx.rgb(230, 230, 230)
                 : this.kaboomCtx.rgb(255, 255, 255);
+        });
+
+        this.gameObject.onHover(() => {
+            if (!this.gameObject) return;
+            this.kaboomCtx.cursor('pointer');
+            this.gameObject.color = this.kaboomCtx.rgb(230, 230, 230);
         });
 
     }
