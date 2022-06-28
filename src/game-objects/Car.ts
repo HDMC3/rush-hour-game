@@ -67,15 +67,19 @@ export class Car {
 
             this.kaboomCtx.cursor('pointer');
 
-            const xVelocityDirection = this.kaboomCtx.mousePos().sub(this.dragOffset).sub(this.gameObject.pos).x;
-            const yVelocityDirection = this.kaboomCtx.mousePos().sub(this.dragOffset).sub(this.gameObject.pos).y;
-
-            if (this.orientation === 'horizontal') {
-                this.gameObject.move(xVelocityDirection * 28 / this.kaboomCtx.dt(), 0);
+            if (this.orientation === 'horizontal' && this.kaboomCtx.mousePos().sub(this.dragOffset).x > this.gameObject.pos.x) {
+                this.gameObject.move(28 / this.kaboomCtx.dt(), 0);
             }
 
-            if (this.orientation === 'vertical') {
-                this.gameObject.move(0, yVelocityDirection * 28 / this.kaboomCtx.dt());
+            if (this.orientation === 'horizontal' && this.kaboomCtx.mousePos().sub(this.dragOffset).x < this.gameObject.pos.x) {
+                this.gameObject.move(-28 / this.kaboomCtx.dt(), 0);
+            }
+
+            if (this.orientation === 'vertical' && this.kaboomCtx.mousePos().sub(this.dragOffset).y > this.gameObject.pos.y) {
+                this.gameObject.move(0, 28 / this.kaboomCtx.dt());
+            }
+            if (this.orientation === 'vertical' && this.kaboomCtx.mousePos().sub(this.dragOffset).y < this.gameObject.pos.y) {
+                this.gameObject.move(0, -28 / this.kaboomCtx.dt());
             }
         });
 
