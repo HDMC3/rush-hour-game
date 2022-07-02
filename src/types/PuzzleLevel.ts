@@ -1,4 +1,4 @@
-import { PuzzleLevelDifficulty } from '../constants/game-constants';
+import { PuzzleLevelDifficulty } from '../constants/puzzle-level-contants';
 import { PuzzleLevelCar } from './PuzzleLevelCar';
 import { SolutionInstruction } from './SolutionInstruction';
 
