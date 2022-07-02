@@ -1,8 +1,8 @@
-import { KaboomCtx, Vec2 } from 'kaboom';
+import { KaboomCtx, Origin, Vec2 } from 'kaboom';
 
 export class Button {
 
-    static async addButton(kaboomCtx: KaboomCtx, gameObjectTag: string, pos: Vec2, spriteId: string, spriteSrc: string, onClickHandle: () => void) {
+    static async addButton(kaboomCtx: KaboomCtx, gameObjectTag: string, origin: Vec2 | Origin, pos: Vec2, spriteId: string, spriteSrc: string, onClickHandle: () => void) {
         await kaboomCtx.loadSprite(spriteId, `ui-sprites/buttons/${spriteSrc}`, {
             sliceX: 2,
             anims: {
@@ -17,7 +17,7 @@ export class Button {
 
         const button = kaboomCtx.add([
             kaboomCtx.sprite(spriteId),
-            kaboomCtx.origin('top'),
+            kaboomCtx.origin(origin),
             kaboomCtx.pos(pos),
             kaboomCtx.area(),
             gameObjectTag,
