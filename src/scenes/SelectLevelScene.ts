@@ -79,7 +79,6 @@ export class SelectLevelScene {
             'left',
             this.kaboomCtx.vec2(10, this.headerHeight / 2),
             'back-button-sprite',
-            'back-button-sprite.png',
             () => {
                 this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
             }
@@ -97,7 +96,6 @@ export class SelectLevelScene {
             'top',
             this.kaboomCtx.vec2(this.levelSelectedCard.pos.x - this.levelSelectedCard.width / 2, this.levelSelectedCard.pos.y + this.levelSelectedCard.height / 2 + 20),
             'select-button-sprite',
-            'select-button-sprite.png',
             async() => {
                 const levelButtonSelected = this.levelButtons.find(btn => btn.selected);
                 if (!levelButtonSelected) return;

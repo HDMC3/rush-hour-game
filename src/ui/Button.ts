@@ -2,19 +2,7 @@ import { KaboomCtx, Origin, Vec2 } from 'kaboom';
 
 export class Button {
 
-    static async addButton(kaboomCtx: KaboomCtx, gameObjectTag: string, origin: Vec2 | Origin, pos: Vec2, spriteId: string, spriteSrc: string, onClickHandle: () => void) {
-        await kaboomCtx.loadSprite(spriteId, `ui-sprites/buttons/${spriteSrc}`, {
-            sliceX: 2,
-            anims: {
-                default: 0,
-                click: 1
-            }
-        });
-
-        await kaboomCtx.loadFont('custom-font', 'ui-sprites/custom-font.png', 14, 18, {
-            chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.:;'
-        });
-
+    static async addButton(kaboomCtx: KaboomCtx, gameObjectTag: string, origin: Vec2 | Origin, pos: Vec2, spriteId: string, onClickHandle: () => void) {
         const button = kaboomCtx.add([
             kaboomCtx.sprite(spriteId),
             kaboomCtx.origin(origin),

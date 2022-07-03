@@ -34,7 +34,6 @@ export class GameScene {
                 'top',
                 startButtonPos,
                 'start-button-sprite',
-                'start-button-sprite.png',
                 () => {
                     console.log('START');
                 }
@@ -49,7 +48,6 @@ export class GameScene {
             'top',
             selectLevelButtonPos,
             'select-level-button-sprite',
-            'select-level-button-sprite.png',
             () => {
                 this.clearCars();
                 this.kaboomCtx.go(SelectLevelScene.id);

@@ -1,4 +1,4 @@
-import { KaboomCtx } from 'kaboom';
+import { KaboomCtx, SpriteLoadOpt } from 'kaboom';
 import { CAR_SPRITE_DATA } from './constants/car-constants';
 
 export class AssetsLoader {
@@ -21,6 +21,25 @@ export class AssetsLoader {
             await this.kaboomCtx.loadSprite('board-wall-bottom', 'board-sprites/board-wall-bottom.png');
             await this.kaboomCtx.loadSprite('board-quadrant-top-row', 'board-sprites/board-quadrant-top-row.png');
             await this.kaboomCtx.loadSprite('board-quadrant', 'board-sprites/board-quadrant.png');
+
+            // Custom font sprite
+            await this.kaboomCtx.loadFont('custom-font', 'ui-sprites/custom-font.png', 14, 18, {
+                chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.:;'
+            });
+
+            // Button sprites
+            const buttonSpritesOptions: SpriteLoadOpt = {
+                sliceX: 2,
+                anims: {
+                    default: 0,
+                    click: 1
+                }
+            };
+            await this.kaboomCtx.loadSprite('back-button-sprite', 'ui-sprites/buttons/back-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('pause-button-sprite', 'ui-sprites/buttons/pause-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('select-button-sprite', 'ui-sprites/buttons/select-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('select-level-button-sprite', 'ui-sprites/buttons/select-level-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('start-button-sprite', 'ui-sprites/buttons/start-button-sprite.png', buttonSpritesOptions);
         } catch (error) {
             alert('Problema al cargar recursos');
             throw error;
