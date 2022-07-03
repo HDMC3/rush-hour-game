@@ -5,26 +5,7 @@ export class Board {
 
     constructor(private kaboomCtx: KaboomCtx) { }
 
-    private async loadAssets() {
-        try {
-            await this.kaboomCtx.loadSprite('board-wall-left', 'board-sprites/board-wall-left.png');
-            await this.kaboomCtx.loadSprite('board-wall-right-top', 'board-sprites/board-wall-right-top.png');
-            await this.kaboomCtx.loadSprite('board-exit', 'board-sprites/board-exit.png');
-            await this.kaboomCtx.loadSprite('board-wall-right-bottom', 'board-sprites/board-wall-right-bottom.png');
-            await this.kaboomCtx.loadSprite('board-wall-top', 'board-sprites/board-wall-top.png');
-            await this.kaboomCtx.loadSprite('board-wall-bottom', 'board-sprites/board-wall-bottom.png');
-            await this.kaboomCtx.loadSprite('board-quadrant-top-row', 'board-sprites/board-quadrant-top-row.png');
-            await this.kaboomCtx.loadSprite('board-quadrant', 'board-sprites/board-quadrant.png');
-        } catch (error) {
-            alert('Problema al cargar recursos');
-            throw error;
-        }
-    }
-
     async addGameObject() {
-
-        await this.loadAssets();
-
         this.kaboomCtx.add([
             this.kaboomCtx.sprite('board-wall-left'),
             this.kaboomCtx.pos(BoardCoordinates.X, BoardCoordinates.Y),
