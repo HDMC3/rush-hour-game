@@ -51,11 +51,19 @@ export class GameScene {
             'select-level-button-sprite',
             'select-level-button-sprite.png',
             () => {
+                this.clearCars();
                 this.kaboomCtx.go(SelectLevelScene.id);
                 console.log('CLICK');
             }
         );
 
     };
+
+    private clearCars() {
+        for (const car of this.cars) {
+            car.destroy();
+        }
+        this.cars.length = 0;
+    }
 
 }
