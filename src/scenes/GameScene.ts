@@ -4,6 +4,7 @@ import { Board } from '../game-objects/Board';
 import { Car } from '../game-objects/Car';
 import { PuzzleLevel } from '../types/PuzzleLevel';
 import { Button } from '../ui/Button';
+import { SceneHeader } from '../ui/SceneHeader';
 import { SelectLevelScene } from './SelectLevelScene';
 
 export class GameScene {
@@ -15,6 +16,8 @@ export class GameScene {
     }
 
     readonly sceneDef: SceneDef = async(level?: PuzzleLevel) => {
+
+        SceneHeader.addHeader(this.kaboomCtx, level ? `NIVEL ${level.levelNumber}` : 'NIVEL NO SELECCIONADO');
 
         const board = new Board(this.kaboomCtx);
         await board.addGameObject();
@@ -35,7 +38,6 @@ export class GameScene {
                 startButtonPos,
                 'start-button-sprite',
                 () => {
-                    console.log('START');
                 }
             );
 
@@ -51,7 +53,6 @@ export class GameScene {
             () => {
                 this.clearCars();
                 this.kaboomCtx.go(SelectLevelScene.id);
-                console.log('CLICK');
             }
         );
 
