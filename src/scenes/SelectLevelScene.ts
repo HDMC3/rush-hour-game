@@ -3,6 +3,7 @@ import { PuzzleLevelDifficulty } from '../constants/puzzle-level-contants';
 import { PuzzleLevel } from '../types/PuzzleLevel';
 import { SpriteLoadData } from '../types/SpriteLoadData';
 import { Button } from '../ui/Button';
+import { SceneHeader } from '../ui/SceneHeader';
 import { GameScene } from './GameScene';
 import { LevelLoader } from './LevelLoader';
 
@@ -70,22 +71,7 @@ export class SelectLevelScene {
             }
         );
 
-        this.kaboomCtx.add([
-            this.kaboomCtx.rect(this.kaboomCtx.width(), this.headerHeight),
-            this.kaboomCtx.color(237, 242, 226)
-        ]);
-
-        this.kaboomCtx.add([
-            this.kaboomCtx.rect(this.kaboomCtx.width(), 2),
-            this.kaboomCtx.color(0, 0, 0),
-            this.kaboomCtx.pos(0, this.headerHeight - 2)
-        ]);
-
-        this.kaboomCtx.add([
-            this.kaboomCtx.text('NIVELES', { font: 'custom-font', size: 36 }),
-            this.kaboomCtx.origin('top'),
-            this.kaboomCtx.pos(this.kaboomCtx.center().x, 20)
-        ]);
+        SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
 
         Button.addButton(
             this.kaboomCtx,
