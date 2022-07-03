@@ -40,7 +40,7 @@ export class Button {
             kaboomCtx.cursor(button.isHovering() ? 'pointer' : 'default');
         });
 
-
+        return button;
     }
 
 }
