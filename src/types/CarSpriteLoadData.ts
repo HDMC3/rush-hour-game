@@ -1,5 +1,10 @@
 export type CarSpriteLoadData = {
-    name: string;
-    horizontalSprite: string;
-    verticalSprite: string;
+    vertical: {
+        name: string;
+        sprite: string;
+    },
+    horizontal: {
+        name: string;
+        sprite: string;
+    }
 }

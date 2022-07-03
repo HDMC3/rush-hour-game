@@ -22,20 +22,7 @@ export class Car {
         this.gameObjectName = CAR_OBJECT_NAMES[this.carId];
     }
 
-    private async loadAssets() {
-        const spriteSrc = this.orientation === 'horizontal'
-            ? CAR_SPRITE_DATA[this.carId].horizontalSprite
-            : CAR_SPRITE_DATA[this.carId].verticalSprite;
-        try {
-            await this.kaboomCtx.loadSprite(CAR_SPRITE_DATA[this.carId].name, 'car-sprites/' + spriteSrc);
-        } catch (error) {
-            alert('Problema al cargar recursos');
-            throw error;
-        }
-    }
-
     async addGameObject() {
-        await this.loadAssets();
 
         const carOrigin = {
             x: BOARD_QUADRANTS_COORDINATES[this.x][this.y].X,
@@ -45,7 +32,11 @@ export class Car {
         const position = this.kaboomCtx.vec2(carOrigin.x, carOrigin.y);
 
         this.gameObject = this.kaboomCtx.add([
-            this.kaboomCtx.sprite(CAR_SPRITE_DATA[this.carId].name),
+            this.kaboomCtx.sprite(
+                this.orientation === 'horizontal'
+                    ? CAR_SPRITE_DATA[this.carId].horizontal.name
+                    : CAR_SPRITE_DATA[this.carId].vertical.name
+            ),
             this.kaboomCtx.pos(position),
             this.kaboomCtx.area(),
             this.kaboomCtx.solid(),
