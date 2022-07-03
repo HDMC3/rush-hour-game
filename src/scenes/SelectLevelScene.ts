@@ -1,7 +1,7 @@
 import { AreaComp, GameObj, KaboomCtx, OriginComp, PosComp, SceneDef, SpriteComp, TextComp, Vec2 } from 'kaboom';
 import { PuzzleLevelDifficulty } from '../constants/puzzle-level-contants';
+import { BANNERS_SPRITE_DATA } from '../constants/select-level-scene-constants';
 import { PuzzleLevel } from '../types/PuzzleLevel';
-import { SpriteLoadData } from '../types/SpriteLoadData';
 import { Button } from '../ui/Button';
 import { SceneHeader } from '../ui/SceneHeader';
 import { GameScene } from './GameScene';
@@ -20,14 +20,6 @@ export class SelectLevelScene {
     private levelSelectedCard?: GameObj<SpriteComp | PosComp | OriginComp>;
     private puzzleLevelSelected?: PuzzleLevel;
 
-
-    private BANNERS_SPRITE_DATA: Record<PuzzleLevelDifficulty, SpriteLoadData> = {
-        0: { name: 'levels-beginner-banner-sprite', spriteSource: 'levels-beginner-banner-sprite.png' },
-        1: { name: 'levels-intermediate-banner-sprite', spriteSource: 'levels-intermediate-banner-sprite.png' },
-        2: { name: 'levels-advanced-banner-sprite', spriteSource: 'levels-advanced-banner-sprite.png' },
-        3: { name: 'levels-expert-banner-sprite', spriteSource: 'levels-expert-banner-sprite.png' }
-    };
-
     private leftPadding = 50;
     private rightPadding = 50;
     private headerHeight = 76;
@@ -37,39 +29,6 @@ export class SelectLevelScene {
     }
 
     sceneDef: SceneDef = async() => {
-        await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',
-            {
-                sliceX: 3,
-                anims: {
-                    default: 0,
-                    click: 1,
-                    selected: 2
-                }
-            }
-        );
-        await this.kaboomCtx.loadSprite(
-            this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.BEGINNER].name,
-            'ui-sprites/select-level-scene/' + this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.BEGINNER].spriteSource
-        );
-        await this.kaboomCtx.loadSprite(
-            this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.INTERMEDIATE].name,
-            'ui-sprites/select-level-scene/' + this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.INTERMEDIATE].spriteSource
-        );
-        await this.kaboomCtx.loadSprite(
-            this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.ADVANCED].name,
-            'ui-sprites/select-level-scene/' + this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.ADVANCED].spriteSource
-        );
-        await this.kaboomCtx.loadSprite(
-            this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.EXPERT].name,
-            'ui-sprites/select-level-scene/' + this.BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.EXPERT].spriteSource
-        );
-
-        await this.kaboomCtx.loadSprite('level-cards-sprite', 'ui-sprites/select-level-scene/level-cards-sprite.png',
-            {
-                sliceX: 10,
-                sliceY: 4
-            }
-        );
 
         SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
 
@@ -118,7 +77,7 @@ export class SelectLevelScene {
             const levelButtonWidth = 46;
             const levelButtonHeight = 48;
             const levelBanner = this.kaboomCtx.add([
-                this.kaboomCtx.sprite(this.BANNERS_SPRITE_DATA[difficultyLevel].name),
+                this.kaboomCtx.sprite(BANNERS_SPRITE_DATA[difficultyLevel].name),
                 this.kaboomCtx.pos(xCoord, yCoord)
             ]);
 

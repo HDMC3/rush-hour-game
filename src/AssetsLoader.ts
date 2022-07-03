@@ -1,5 +1,7 @@
 import { KaboomCtx, SpriteLoadOpt } from 'kaboom';
 import { CAR_SPRITE_DATA } from './constants/car-constants';
+import { PuzzleLevelDifficulty } from './constants/puzzle-level-contants';
+import { BANNERS_SPRITE_DATA } from './constants/select-level-scene-constants';
 
 export class AssetsLoader {
     constructor(private kaboomCtx: KaboomCtx) { }
@@ -40,6 +42,42 @@ export class AssetsLoader {
             await this.kaboomCtx.loadSprite('select-button-sprite', 'ui-sprites/buttons/select-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('select-level-button-sprite', 'ui-sprites/buttons/select-level-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('start-button-sprite', 'ui-sprites/buttons/start-button-sprite.png', buttonSpritesOptions);
+
+            // Select level scene sprites
+            await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',
+                {
+                    sliceX: 3,
+                    anims: {
+                        default: 0,
+                        click: 1,
+                        selected: 2
+                    }
+                }
+            );
+            await this.kaboomCtx.loadSprite(
+                BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.BEGINNER].name,
+                'ui-sprites/select-level-scene/' + BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.BEGINNER].spriteSource
+            );
+            await this.kaboomCtx.loadSprite(
+                BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.INTERMEDIATE].name,
+                'ui-sprites/select-level-scene/' + BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.INTERMEDIATE].spriteSource
+            );
+            await this.kaboomCtx.loadSprite(
+                BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.ADVANCED].name,
+                'ui-sprites/select-level-scene/' + BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.ADVANCED].spriteSource
+            );
+            await this.kaboomCtx.loadSprite(
+                BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.EXPERT].name,
+                'ui-sprites/select-level-scene/' + BANNERS_SPRITE_DATA[PuzzleLevelDifficulty.EXPERT].spriteSource
+            );
+
+            await this.kaboomCtx.loadSprite('level-cards-sprite', 'ui-sprites/select-level-scene/level-cards-sprite.png',
+                {
+                    sliceX: 10,
+                    sliceY: 4
+                }
+            );
+
         } catch (error) {
             alert('Problema al cargar recursos');
             throw error;
