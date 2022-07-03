@@ -10,7 +10,7 @@ export enum BoardMainMeasurements {
 
 export enum BoardCoordinates {
     X = gameKaboomCtx.center().x - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2),
-    Y = gameKaboomCtx.center().y - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2)
+    Y = gameKaboomCtx.center().y - (BoardMainMeasurements.BOARD_SIDE_LENGTH / 2) - 25
 }
 
 export enum InsideBoardCoordinates {

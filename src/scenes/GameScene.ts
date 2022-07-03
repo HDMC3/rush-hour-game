@@ -15,9 +15,11 @@ export class GameScene {
     }
 
     readonly sceneDef: SceneDef = async(level?: PuzzleLevel) => {
+
         const board = new Board(this.kaboomCtx);
         await board.addGameObject();
-        const actionButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
+        const startButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
+        const selectLevelButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
 
         if (level) {
             for (const levelCar of level.cars) {
@@ -30,27 +32,29 @@ export class GameScene {
                 this.kaboomCtx,
                 'start-button',
                 'top',
-                actionButtonPos,
+                startButtonPos,
                 'start-button-sprite',
                 'start-button-sprite.png',
                 () => {
                     console.log('START');
                 }
             );
-        } else {
-            Button.addButton(
-                this.kaboomCtx,
-                'select-level-button',
-                'top',
-                actionButtonPos,
-                'select-level-button-sprite',
-                'select-level-button-sprite.png',
-                () => {
-                    this.kaboomCtx.go(SelectLevelScene.id, level);
-                    console.log('CLICK');
-                }
-            );
+
+            selectLevelButtonPos.y += 50;
         }
+
+        Button.addButton(
+            this.kaboomCtx,
+            'select-level-button',
+            'top',
+            selectLevelButtonPos,
+            'select-level-button-sprite',
+            'select-level-button-sprite.png',
+            () => {
+                this.kaboomCtx.go(SelectLevelScene.id);
+                console.log('CLICK');
+            }
+        );
 
     };
 
