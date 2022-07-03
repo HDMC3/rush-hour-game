@@ -35,7 +35,7 @@ export class SelectLevelScene {
         this.levelButtons = [];
     }
 
-    sceneDef: SceneDef = async(currentLevel: PuzzleLevel) => {
+    sceneDef: SceneDef = async() => {
         await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',
             {
                 sliceX: 3,
@@ -95,17 +95,15 @@ export class SelectLevelScene {
             'back-button-sprite',
             'back-button-sprite.png',
             () => {
-                this.kaboomCtx.go(GameScene.id);
+                this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
             }
         );
 
         this.levelSelectedCard = this.kaboomCtx.add([
-            this.kaboomCtx.sprite('level-cards-sprite', { frame: 0 }),
+            this.kaboomCtx.sprite('level-cards-sprite', { frame: this.puzzleLevelSelected ? this.puzzleLevelSelected.levelNumber - 1 : 0 }),
             this.kaboomCtx.origin('right'),
             this.kaboomCtx.pos(this.kaboomCtx.width() - this.rightPadding, this.kaboomCtx.center().y)
         ]);
-
-        this.puzzleLevelSelected = currentLevel ?? await this.levelLoader.loadLevel(1, PuzzleLevelDifficulty.BEGINNER);
 
         Button.addButton(
             this.kaboomCtx,
@@ -115,9 +113,11 @@ export class SelectLevelScene {
             'select-button-sprite',
             'select-button-sprite.png',
             async() => {
-                if (this.puzzleLevelSelected) {
-                    this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
-                }
+                const levelButtonSelected = this.levelButtons.find(btn => btn.selected);
+                if (!levelButtonSelected) return;
+                this.puzzleLevelSelected = await this.levelLoader.loadLevel(levelButtonSelected.levelNumber, levelButtonSelected.difficulty);
+                if (!this.puzzleLevelSelected) return;
+                this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
             }
         );
 
@@ -158,7 +158,7 @@ export class SelectLevelScene {
             {
                 levelNumber,
                 difficulty: difficultyLevel,
-                selected: levelNumber === 1,
+                selected: this.puzzleLevelSelected ? this.puzzleLevelSelected.levelNumber === levelNumber : levelNumber === 1,
                 clicked: false
             }
         ]);
@@ -168,7 +168,6 @@ export class SelectLevelScene {
             if (!levelButton.clicked) {
                 this.levelButtons.forEach(btn => { btn.selected = false; });
                 levelButton.selected = true;
-                this.puzzleLevelSelected = await this.levelLoader.loadLevel(levelButton.levelNumber, levelButton.difficulty);
                 if (this.levelSelectedCard) {
                     this.levelSelectedCard.frame = levelButton.levelNumber - 1;
                 }
