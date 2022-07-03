@@ -104,4 +104,10 @@ export class Car {
         });
 
     }
+
+    destroy() {
+        if (this.gameObject) {
+            this.gameObject.destroy();
+        }
+    }
 }
