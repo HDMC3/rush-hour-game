@@ -21,22 +21,11 @@ export class Button {
 
         this.gameObject.onClick(() => {
             if (!this.gameObject) return;
-            if (!this.gameObject.clicked && !this.gameObject.disabled) onClickHandle();
-            this.gameObject.clicked = true;
+            if (!this.gameObject.disabled) this.gameObject.play('click');
         });
 
-        this.kaboomCtx.onMouseRelease(() => {
-            if (!this.gameObject) return;
-            this.gameObject.clicked = false;
-        });
-
-        this.gameObject.onUpdate(() => {
-            if (!this.gameObject) return;
-            if (this.gameObject.disabled) {
-                this.gameObject.play('disabled');
-                return;
-            }
-            this.gameObject.play(this.gameObject.clicked && this.gameObject.isHovering() ? 'click' : 'default');
+        this.gameObject.onAnimEnd('click', () => {
+            onClickHandle();
         });
     }
 
@@ -45,11 +34,17 @@ export class Button {
     }
 
     disable() {
-        if (this.gameObject) this.gameObject.disabled = true;
+        if (this.gameObject) {
+            this.gameObject.disabled = true;
+            this.gameObject.play('disabled');
+        }
     }
 
     enable() {
-        if (this.gameObject) this.gameObject.disabled = false;
+        if (this.gameObject) {
+            this.gameObject.disabled = false;
+            this.gameObject.play('default');
+        }
     }
 
 }

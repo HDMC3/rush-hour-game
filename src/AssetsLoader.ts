@@ -31,11 +31,14 @@ export class AssetsLoader {
 
             // Button sprites
             const buttonSpritesOptions: SpriteLoadOpt = {
-                sliceX: 3,
+                sliceX: 4,
                 anims: {
                     default: 0,
-                    click: 1,
-                    disabled: 2
+                    click: {
+                        from: 0,
+                        to: 2
+                    },
+                    disabled: 3
                 }
             };
             await this.kaboomCtx.loadSprite('back-button-sprite', 'ui-sprites/buttons/back-button-sprite.png', buttonSpritesOptions);
