@@ -26,15 +26,16 @@ export class AssetsLoader {
 
             // Custom font sprite
             await this.kaboomCtx.loadFont('custom-font', 'ui-sprites/custom-font.png', 14, 18, {
-                chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.:;'
+                chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.;:'
             });
 
             // Button sprites
             const buttonSpritesOptions: SpriteLoadOpt = {
-                sliceX: 2,
+                sliceX: 3,
                 anims: {
                     default: 0,
-                    click: 1
+                    click: 1,
+                    disabled: 2
                 }
             };
             await this.kaboomCtx.loadSprite('back-button-sprite', 'ui-sprites/buttons/back-button-sprite.png', buttonSpritesOptions);
@@ -77,6 +78,12 @@ export class AssetsLoader {
                     sliceY: 4
                 }
             );
+
+            // Time indicator sprite
+            await this.kaboomCtx.loadSprite('time-and-moves-indicator-sprite', 'ui-sprites/time-and-moves-indicator-sprite.png');
+
+            // Car names card sprite
+            await this.kaboomCtx.loadSprite('car-names-card-sprite', 'ui-sprites/car-names-card-sprite.png');
 
         } catch (error) {
             alert('Problema al cargar recursos');

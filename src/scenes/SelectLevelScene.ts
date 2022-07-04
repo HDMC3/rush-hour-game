@@ -20,20 +20,24 @@ export class SelectLevelScene {
     private levelSelectedCard?: GameObj<SpriteComp | PosComp | OriginComp>;
     private puzzleLevelSelected?: PuzzleLevel;
 
+    private backButton: Button;
+    private selectButton: Button;
+
     private leftPadding = 50;
     private rightPadding = 50;
     private headerHeight = 76;
 
     constructor(private kaboomCtx: KaboomCtx, private levelLoader: LevelLoader) {
         this.levelButtons = [];
+        this.backButton = new Button(this.kaboomCtx);
+        this.selectButton = new Button(this.kaboomCtx);
     }
 
     sceneDef: SceneDef = async() => {
 
         SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
 
-        Button.addButton(
-            this.kaboomCtx,
+        this.backButton.addButton(
             'back-button',
             'left',
             this.kaboomCtx.vec2(10, this.headerHeight / 2),
@@ -49,8 +53,7 @@ export class SelectLevelScene {
             this.kaboomCtx.pos(this.kaboomCtx.width() - this.rightPadding, this.kaboomCtx.center().y)
         ]);
 
-        Button.addButton(
-            this.kaboomCtx,
+        this.selectButton.addButton(
             'select-button',
             'top',
             this.kaboomCtx.vec2(this.levelSelectedCard.pos.x - this.levelSelectedCard.width / 2, this.levelSelectedCard.pos.y + this.levelSelectedCard.height / 2 + 20),

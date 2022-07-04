@@ -10,9 +10,13 @@ import { SelectLevelScene } from './SelectLevelScene';
 export class GameScene {
     static readonly id: string = 'GameScene';
     private cars: Car[];
+    private startButton: Button;
+    private selectLevelButton: Button;
 
     constructor(private kaboomCtx: KaboomCtx) {
         this.cars = [];
+        this.startButton = new Button(this.kaboomCtx);
+        this.selectLevelButton = new Button(this.kaboomCtx);
     }
 
     readonly sceneDef: SceneDef = async(level?: PuzzleLevel) => {
@@ -31,8 +35,7 @@ export class GameScene {
                 this.cars.push(car);
             }
 
-            Button.addButton(
-                this.kaboomCtx,
+            this.startButton.addButton(
                 'start-button',
                 'top',
                 startButtonPos,
@@ -44,14 +47,14 @@ export class GameScene {
             selectLevelButtonPos.y += 50;
         }
 
-        Button.addButton(
-            this.kaboomCtx,
+        this.selectLevelButton.addButton(
             'select-level-button',
             'top',
             selectLevelButtonPos,
             'select-level-button-sprite',
             () => {
                 this.clearCars();
+                this.clearButtons();
                 this.kaboomCtx.go(SelectLevelScene.id);
             }
         );
@@ -63,6 +66,11 @@ export class GameScene {
             car.destroy();
         }
         this.cars.length = 0;
+    }
+
+    private clearButtons() {
+        this.startButton.destroy();
+        this.selectLevelButton.destroy();
     }
 
 }

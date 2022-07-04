@@ -1,34 +1,55 @@
-import { KaboomCtx, Origin, Vec2 } from 'kaboom';
+import { AreaComp, GameObj, KaboomCtx, Origin, OriginComp, PosComp, SpriteComp, Vec2 } from 'kaboom';
 
 export class Button {
 
-    static async addButton(kaboomCtx: KaboomCtx, gameObjectTag: string, origin: Vec2 | Origin, pos: Vec2, spriteId: string, onClickHandle: () => void) {
-        const button = kaboomCtx.add([
-            kaboomCtx.sprite(spriteId),
-            kaboomCtx.origin(origin),
-            kaboomCtx.pos(pos),
-            kaboomCtx.area(),
+    private gameObject?: GameObj<SpriteComp | OriginComp | PosComp | AreaComp | { clicked: boolean, disabled: boolean }>;
+
+    constructor(private kaboomCtx: KaboomCtx) { }
+
+    addButton(gameObjectTag: string, origin: Vec2 | Origin, pos: Vec2, spriteId: string, onClickHandle: () => void) {
+        this.gameObject = this.kaboomCtx.add([
+            this.kaboomCtx.sprite(spriteId),
+            this.kaboomCtx.origin(origin),
+            this.kaboomCtx.pos(pos),
+            this.kaboomCtx.area(),
             gameObjectTag,
             {
-                clicked: false
+                clicked: false,
+                disabled: false
             }
         ]);
 
-        button.onClick(() => {
-            if (!button.clicked) onClickHandle();
-            button.clicked = true;
+        this.gameObject.onClick(() => {
+            if (!this.gameObject) return;
+            if (!this.gameObject.clicked && !this.gameObject.disabled) onClickHandle();
+            this.gameObject.clicked = true;
         });
 
-        kaboomCtx.onMouseRelease(() => {
-            button.clicked = false;
+        this.kaboomCtx.onMouseRelease(() => {
+            if (!this.gameObject) return;
+            this.gameObject.clicked = false;
         });
 
-        button.onUpdate(() => {
-            button.play(button.clicked && button.isHovering() ? 'click' : 'default');
-            kaboomCtx.cursor(button.isHovering() ? 'pointer' : 'default');
+        this.gameObject.onUpdate(() => {
+            if (!this.gameObject) return;
+            if (this.gameObject.disabled) {
+                this.gameObject.play('disabled');
+                return;
+            }
+            this.gameObject.play(this.gameObject.clicked && this.gameObject.isHovering() ? 'click' : 'default');
         });
+    }
 
-        return button;
+    destroy() {
+        this.gameObject?.destroy();
+    }
+
+    disable() {
+        if (this.gameObject) this.gameObject.disabled = true;
+    }
+
+    enable() {
+        if (this.gameObject) this.gameObject.disabled = false;
     }
 
 }
