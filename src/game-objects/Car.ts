@@ -9,6 +9,7 @@ export class Car {
     private isDragging: boolean;
     private gameObject?: GameObj<SpriteComp | PosComp | MoveComp | ColorComp | AreaComp | SolidComp>;
     private gameObjectName: string;
+    private currentPosition: Vec2;
 
     constructor(
         private kaboomCtx: KaboomCtx,
@@ -20,6 +21,10 @@ export class Car {
         this.isDragging = false;
         this.dragOffset = this.kaboomCtx.vec2();
         this.gameObjectName = CAR_OBJECT_NAMES[this.carId];
+        this.currentPosition = this.kaboomCtx.vec2(
+            BOARD_QUADRANTS_COORDINATES[this.x][this.y].X,
+            BOARD_QUADRANTS_COORDINATES[this.x][this.y].Y
+        );
     }
 
     async addGameObject() {
@@ -41,7 +46,8 @@ export class Car {
             this.kaboomCtx.area(),
             this.kaboomCtx.solid(),
             this.kaboomCtx.color(),
-            this.gameObjectName
+            this.gameObjectName,
+            'car'
         ]);
 
         this.kaboomCtx.onClick(this.gameObjectName, () => {
@@ -77,6 +83,12 @@ export class Car {
         this.kaboomCtx.onMouseRelease(() => {
             this.isDragging = false;
             this.kaboomCtx.cursor('default');
+            if (!this.gameObject) return;
+            if (this.currentPosition.x !== this.gameObject.pos.x || this.currentPosition.y !== this.gameObject.pos.y) {
+                this.gameObject.trigger('movecar');
+                this.currentPosition = this.kaboomCtx.vec2(this.gameObject.pos.x, this.gameObject.pos.y);
+            }
+
         });
 
         this.kaboomCtx.onMouseMove(() => {

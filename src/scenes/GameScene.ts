@@ -1,9 +1,10 @@
-import { KaboomCtx, SceneDef } from 'kaboom';
+import { EventCanceller, KaboomCtx, SceneDef } from 'kaboom';
 import { BoardCoordinates, BoardMainMeasurements } from '../constants/board-constants';
 import { Board } from '../game-objects/Board';
 import { Car } from '../game-objects/Car';
 import { PuzzleLevel } from '../types/PuzzleLevel';
 import { Button } from '../ui/Button';
+import { MovesIndicator } from '../ui/MovesIndicator';
 import { SceneHeader } from '../ui/SceneHeader';
 import { TimeIndicator } from '../ui/TimeIndicator';
 import { SelectLevelScene } from './SelectLevelScene';
@@ -15,6 +16,8 @@ export class GameScene {
     private pauseButton: Button;
     private selectLevelButton: Button;
     private timeIndicator: TimeIndicator;
+    private movesIndicator: MovesIndicator;
+    private onMoveCarEvent?: EventCanceller;
 
     constructor(private kaboomCtx: KaboomCtx) {
         this.cars = [];
@@ -22,6 +25,7 @@ export class GameScene {
         this.pauseButton = new Button(this.kaboomCtx);
         this.selectLevelButton = new Button(this.kaboomCtx);
         this.timeIndicator = new TimeIndicator(this.kaboomCtx);
+        this.movesIndicator = new MovesIndicator(this.kaboomCtx);
     }
 
     readonly sceneDef: SceneDef = async(level?: PuzzleLevel) => {
@@ -33,6 +37,8 @@ export class GameScene {
 
         const timeIndicatorPos = this.kaboomCtx.vec2(50, BoardCoordinates.Y);
         this.timeIndicator.addTimeIndicator(timeIndicatorPos);
+        const movesIndicatorPos = this.kaboomCtx.vec2(50, BoardCoordinates.Y + 150);
+        this.movesIndicator.addMovesIndicator(movesIndicatorPos);
 
         const startButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x - BoardMainMeasurements.BOARD_SIDE_LENGTH / 4, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
         const pauseButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x + BoardMainMeasurements.BOARD_SIDE_LENGTH / 4, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
@@ -55,6 +61,9 @@ export class GameScene {
                     this.pauseButton.enable();
                     this.startButton.disable();
                     this.selectLevelButton.disable();
+                    this.onMoveCarEvent = this.kaboomCtx.on('movecar', 'car', () => {
+                        this.movesIndicator.increment();
+                    });
                 }
             );
 
@@ -68,6 +77,7 @@ export class GameScene {
                     this.startButton.enable();
                     this.pauseButton.disable();
                     this.selectLevelButton.enable();
+                    if (this.onMoveCarEvent) this.onMoveCarEvent();
                 }
             );
             this.pauseButton.disable();
@@ -84,6 +94,10 @@ export class GameScene {
                 this.clearCars();
                 this.clearButtons();
                 this.timeIndicator.destroy();
+                this.movesIndicator.destroy();
+                if (this.onMoveCarEvent) {
+                    this.onMoveCarEvent();
+                }
                 this.kaboomCtx.go(SelectLevelScene.id);
             }
         );
