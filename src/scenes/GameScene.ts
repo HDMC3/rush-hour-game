@@ -1,5 +1,6 @@
 import { EventCanceller, KaboomCtx, SceneDef } from 'kaboom';
 import { BoardCoordinates, BoardMainMeasurements } from '../constants/board-constants';
+import { CAR_OBJECT_NAMES } from '../constants/car-constants';
 import { Board } from '../game-objects/Board';
 import { Car } from '../game-objects/Car';
 import { PuzzleLevel } from '../types/PuzzleLevel';
@@ -7,6 +8,7 @@ import { Button } from '../ui/Button';
 import { MovesIndicator } from '../ui/MovesIndicator';
 import { SceneHeader } from '../ui/SceneHeader';
 import { TimeIndicator } from '../ui/TimeIndicator';
+import { LevelWinScene } from './LevelWinScene';
 import { SelectLevelScene } from './SelectLevelScene';
 
 export class GameScene {
@@ -48,6 +50,7 @@ export class GameScene {
             for (const levelCar of level.cars) {
                 const car = new Car(this.kaboomCtx, levelCar.carId, levelCar.x, levelCar.y, levelCar.orientation);
                 car.addGameObject();
+                car.lock();
                 this.cars.push(car);
             }
 
@@ -57,6 +60,7 @@ export class GameScene {
                 startButtonPos,
                 'start-button-sprite',
                 () => {
+                    this.unlockCars();
                     this.timeIndicator.start();
                     this.pauseButton.enable();
                     this.startButton.disable();
@@ -73,6 +77,7 @@ export class GameScene {
                 pauseButtonPos,
                 'pause-button-sprite',
                 () => {
+                    this.lockCars();
                     this.timeIndicator.pause();
                     this.startButton.enable();
                     this.pauseButton.disable();
@@ -102,6 +107,24 @@ export class GameScene {
             }
         );
 
+        this.kaboomCtx.onCollide(CAR_OBJECT_NAMES.X, 'exit', () => {
+            const xCar = this.cars.find(car => car.carId === 'X');
+            if (xCar) {
+                this.lockCars();
+                xCar.startWinAnimation();
+            }
+            this.kaboomCtx.wait(0.5, () => {
+                this.clearCars();
+                this.clearButtons();
+                this.timeIndicator.destroy();
+                this.movesIndicator.destroy();
+                if (this.onMoveCarEvent) {
+                    this.onMoveCarEvent();
+                }
+                this.kaboomCtx.go(LevelWinScene.id, level);
+            });
+        });
+
     };
 
     private clearCars() {
@@ -114,6 +137,18 @@ export class GameScene {
     private clearButtons() {
         this.startButton.destroy();
         this.selectLevelButton.destroy();
+    }
+
+    private unlockCars() {
+        for (const car of this.cars) {
+            car.unlock();
+        }
+    }
+
+    private lockCars() {
+        for (const car of this.cars) {
+            car.lock();
+        }
     }
 
 }

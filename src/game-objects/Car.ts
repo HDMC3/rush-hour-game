@@ -1,4 +1,4 @@
-import { AreaComp, ColorComp, GameObj, KaboomCtx, MoveComp, PosComp, SolidComp, SpriteComp, Vec2 } from 'kaboom';
+import { AreaComp, ColorComp, GameObj, KaboomCtx, MoveComp, PosComp, SolidComp, SpriteComp, StateComp, Vec2 } from 'kaboom';
 import { BOARD_QUADRANTS_COORDINATES } from '../constants/board-constants';
 import { CAR_OBJECT_NAMES, CAR_SPRITE_DATA } from '../constants/car-constants';
 import { CarId } from '../types/CarId';
@@ -7,13 +7,14 @@ import { CarOrientation } from '../types/CarOrientation';
 export class Car {
     private dragOffset: Vec2;
     private isDragging: boolean;
-    private gameObject?: GameObj<SpriteComp | PosComp | MoveComp | ColorComp | AreaComp | SolidComp>;
+    private gameObject?: GameObj<SpriteComp | PosComp | MoveComp | ColorComp | AreaComp | SolidComp | StateComp>;
     private gameObjectName: string;
     private currentPosition: Vec2;
+    private isLock: boolean;
 
     constructor(
         private kaboomCtx: KaboomCtx,
-        private carId: CarId,
+        public carId: CarId,
         private x: number,
         private y: number,
         private orientation: CarOrientation
@@ -25,6 +26,7 @@ export class Car {
             BOARD_QUADRANTS_COORDINATES[this.x][this.y].X,
             BOARD_QUADRANTS_COORDINATES[this.x][this.y].Y
         );
+        this.isLock = false;
     }
 
     async addGameObject() {
@@ -46,6 +48,7 @@ export class Car {
             this.kaboomCtx.area(),
             this.kaboomCtx.solid(),
             this.kaboomCtx.color(),
+            this.kaboomCtx.state('default', ['default', 'win']),
             this.gameObjectName,
             'car'
         ]);
@@ -60,7 +63,7 @@ export class Car {
         });
 
         this.gameObject.onUpdate(() => {
-            if (!this.isDragging || !this.gameObject) return;
+            if (!this.isDragging || !this.gameObject || this.isLock) return;
 
             this.kaboomCtx.cursor('pointer');
 
@@ -106,11 +109,28 @@ export class Car {
             this.gameObject.color = this.kaboomCtx.rgb(230, 230, 230);
         });
 
+        this.gameObject.onStateUpdate('win', () => {
+            if (!this.gameObject) return;
+            this.gameObject.move(300, 0);
+        });
+
+    }
+
+    lock() {
+        this.isLock = true;
+    }
+
+    unlock() {
+        this.isLock = false;
     }
 
     destroy() {
         if (this.gameObject) {
             this.gameObject.destroy();
         }
+    }
+
+    startWinAnimation() {
+        this.gameObject?.enterState('win');
     }
 }

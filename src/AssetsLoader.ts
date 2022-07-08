@@ -26,7 +26,7 @@ export class AssetsLoader {
 
             // Custom font sprite
             await this.kaboomCtx.loadFont('custom-font', 'ui-sprites/custom-font.png', 14, 18, {
-                chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.;:'
+                chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,.;:!-'
             });
 
             // Button sprites
