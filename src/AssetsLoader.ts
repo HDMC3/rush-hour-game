@@ -46,6 +46,8 @@ export class AssetsLoader {
             await this.kaboomCtx.loadSprite('select-button-sprite', 'ui-sprites/buttons/select-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('select-level-button-sprite', 'ui-sprites/buttons/select-level-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('start-button-sprite', 'ui-sprites/buttons/start-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('next-level-button-sprite', 'ui-sprites/buttons/next-level-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('main-menu-button-sprite', 'ui-sprites/buttons/main-menu-button-sprite.png', buttonSpritesOptions);
 
             // Select level scene sprites
             await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',
