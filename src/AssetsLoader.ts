@@ -91,8 +91,8 @@ export class AssetsLoader {
             // Time indicator sprite
             await this.kaboomCtx.loadSprite('time-and-moves-indicator-sprite', 'ui-sprites/time-and-moves-indicator-sprite.png');
 
-            // Car names card sprite
-            await this.kaboomCtx.loadSprite('car-names-card-sprite', 'ui-sprites/car-names-card-sprite.png');
+            // Car names poster sprite
+            await this.kaboomCtx.loadSprite('car-names-poster-sprite', 'ui-sprites/car-names-poster-sprite.png');
 
         } catch (error) {
             alert('Problema al cargar recursos');
