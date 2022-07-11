@@ -33,12 +33,12 @@ export class SelectLevelScene {
         this.levelButtons = [];
         this.backButton = new Button(this.kaboomCtx);
         this.selectButton = new Button(this.kaboomCtx);
-        this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
+        this.levelsData = this.kaboomCtx.getData<number[]>('availableLevels');
     }
 
     sceneDef: SceneDef = async(currentLevel?: PuzzleLevel) => {
 
-        this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
+        this.levelsData = this.kaboomCtx.getData<number[]>('availableLevels');
 
         SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
 

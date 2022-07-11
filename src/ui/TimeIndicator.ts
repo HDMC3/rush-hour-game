@@ -61,6 +61,12 @@ export class TimeIndicator {
         }
     }
 
+    get time() {
+        const secondsText = this.seconds < 10 ? `0${this.seconds}` : this.seconds;
+        const minutesText = this.minutes < 10 ? `0${this.minutes}` : this.minutes;
+        return `${minutesText}:${secondsText}`;
+    }
+
     get isActive() {
         return this.active;
     }

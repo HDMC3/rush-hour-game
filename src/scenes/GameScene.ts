@@ -131,6 +131,13 @@ export class GameScene {
 
         this.kaboomCtx.onCollide(CAR_OBJECT_NAMES.X, 'exit', () => {
             const xCar = this.cars.find(car => car.carId === 'X');
+            const completedLevels = this.kaboomCtx.getData<any[]>('completedLevels');
+            completedLevels.push({
+                levelNumber: level?.levelNumber,
+                time: this.timeIndicator.time,
+                moves: this.movesIndicator.movesCount
+            });
+            this.kaboomCtx.setData('completedLevels', completedLevels);
             if (xCar) {
                 this.lockCars();
                 xCar.startWinAnimation();
@@ -143,10 +150,10 @@ export class GameScene {
                 if (this.onMoveCarEvent) {
                     this.onMoveCarEvent();
                 }
-                const levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
+                const levelsData = this.kaboomCtx.getData<number[]>('availableLevels');
                 if (level && level.levelNumber !== 40 && !levelsData.includes(level.levelNumber + 1)) {
                     levelsData.push(level.levelNumber + 1);
-                    this.kaboomCtx.setData('completedLevels', levelsData);
+                    this.kaboomCtx.setData('availableLevels', levelsData);
                 }
                 this.kaboomCtx.go(LevelWinScene.id, level);
             });

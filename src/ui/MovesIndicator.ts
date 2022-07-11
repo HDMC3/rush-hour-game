@@ -30,4 +30,8 @@ export class MovesIndicator {
         this.moves = 0;
         this.gameObject.destroy();
     }
+
+    get movesCount() {
+        return this.moves;
+    }
 }

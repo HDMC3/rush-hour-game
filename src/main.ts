@@ -12,9 +12,14 @@ const assetsLoader = new AssetsLoader(gameKaboomCtx);
 
 assetsLoader.loadSprites();
 
-const data = gameKaboomCtx.getData('completedLevels');
+const data = gameKaboomCtx.getData('availableLevels');
 if (data == null) {
-    gameKaboomCtx.setData('completedLevels', [1]);
+    gameKaboomCtx.setData('availableLevels', [1]);
+}
+
+const completedLevels = gameKaboomCtx.getData('completedLevels');
+if (completedLevels == null) {
+    gameKaboomCtx.setData('completedLevels', []);
 }
 
 const gameScene = new GameScene(gameKaboomCtx);
