@@ -14,7 +14,7 @@ export class SelectLevelScene {
         | PosComp
         | AreaComp
         | OriginComp
-        | { levelNumber: number, difficulty: PuzzleLevelDifficulty, selected: boolean, clicked: boolean }
+        | { levelNumber: number, difficulty: PuzzleLevelDifficulty, selected: boolean, clicked: boolean, disabled: boolean }
     >[];
 
     private levelSelectedCard?: GameObj<SpriteComp | PosComp | OriginComp>;
@@ -22,6 +22,8 @@ export class SelectLevelScene {
 
     private backButton: Button;
     private selectButton: Button;
+
+    private levelsData: number[];
 
     private leftPadding = 50;
     private rightPadding = 50;
@@ -31,9 +33,12 @@ export class SelectLevelScene {
         this.levelButtons = [];
         this.backButton = new Button(this.kaboomCtx);
         this.selectButton = new Button(this.kaboomCtx);
+        this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
     }
 
     sceneDef: SceneDef = async() => {
+
+        this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
 
         SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
 
@@ -43,12 +48,13 @@ export class SelectLevelScene {
             this.kaboomCtx.vec2(10, this.headerHeight / 2),
             'back-button-sprite',
             () => {
+                this.levelButtons.length = 0;
                 this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
             }
         );
 
         this.levelSelectedCard = this.kaboomCtx.add([
-            this.kaboomCtx.sprite('level-cards-sprite', { frame: this.puzzleLevelSelected ? this.puzzleLevelSelected.levelNumber - 1 : 0 }),
+            this.kaboomCtx.sprite('level-cards-sprite', { frame: this.levelsData[this.levelsData.length - 1] - 1 }),
             this.kaboomCtx.origin('right'),
             this.kaboomCtx.pos(this.kaboomCtx.width() - this.rightPadding, this.kaboomCtx.center().y)
         ]);
@@ -63,6 +69,7 @@ export class SelectLevelScene {
                 if (!levelButtonSelected) return;
                 this.puzzleLevelSelected = await this.levelLoader.loadLevel(levelButtonSelected.levelNumber, levelButtonSelected.difficulty);
                 if (!this.puzzleLevelSelected) return;
+                this.levelButtons.length = 0;
                 this.kaboomCtx.go(GameScene.id, this.puzzleLevelSelected);
             }
         );
@@ -85,16 +92,16 @@ export class SelectLevelScene {
             ]);
 
             for (const levelNumber of numberOfLevels[difficultyLevel]) {
-
+                const levelButtonIsDisabled = !this.levelsData.includes(levelNumber);
                 const levelButtonPos = this.kaboomCtx.vec2(xCoord + levelButtonWidth / 2, yCoord + levelBanner.height + 10 + levelButtonHeight / 2);
-                const levelButton = this.addLevelButton(levelButtonPos, levelNumber, difficultyLevel, levelButtonWidth);
+                const levelButton = this.addLevelButton(levelButtonPos, levelNumber, difficultyLevel, levelButtonWidth, levelButtonIsDisabled);
                 this.levelButtons.push(levelButton);
                 xCoord += levelButtonWidth + 10;
             }
         }
     };
 
-    private addLevelButton(pos: Vec2, levelNumber: number, difficultyLevel: PuzzleLevelDifficulty, levelButtonWidth: number) {
+    private addLevelButton(pos: Vec2, levelNumber: number, difficultyLevel: PuzzleLevelDifficulty, levelButtonWidth: number, disabled: boolean) {
         const levelButton = this.kaboomCtx.add([
             this.kaboomCtx.sprite('level-button-sprite'),
             this.kaboomCtx.text(`${levelNumber}`, { font: 'custom-font', lineSpacing: 30, width: levelButtonWidth }), // lineSpacing y width son para ajustar las dimensiones del texto a las del boton
@@ -104,30 +111,31 @@ export class SelectLevelScene {
             {
                 levelNumber,
                 difficulty: difficultyLevel,
-                selected: this.puzzleLevelSelected ? this.puzzleLevelSelected.levelNumber === levelNumber : levelNumber === 1,
-                clicked: false
+                selected: levelNumber === this.levelsData[this.levelsData.length - 1],
+                clicked: false,
+                disabled
             }
         ]);
 
-        levelButton.play('default');
+        levelButton.play(disabled ? 'disabled' : levelButton.selected ? 'selected' : 'default');
         levelButton.onClick(async() => {
-            if (!levelButton.clicked) {
-                this.levelButtons.forEach(btn => { btn.selected = false; });
-                levelButton.selected = true;
-                if (this.levelSelectedCard) {
-                    this.levelSelectedCard.frame = levelButton.levelNumber - 1;
-                }
+            if (!levelButton.disabled) levelButton.play('click');
+        });
+
+        levelButton.onAnimEnd('click', () => {
+            this.levelButtons.forEach(btn => {
+                btn.selected = false;
+                if (!btn.disabled) btn.play('default');
+            });
+            levelButton.selected = true;
+            levelButton.play('selected');
+            if (this.levelSelectedCard) {
+                this.levelSelectedCard.frame = levelButton.levelNumber - 1;
             }
-            levelButton.clicked = true;
         });
 
         this.kaboomCtx.onMouseRelease(() => {
             levelButton.clicked = false;
-        });
-
-        levelButton.onUpdate(() => {
-            levelButton.play(levelButton.clicked && levelButton.isHovering() ? 'click' : levelButton.selected ? 'selected' : 'default');
-            this.kaboomCtx.cursor(this.levelButtons.some(btn => btn.isHovering()) ? 'pointer' : 'default');
         });
 
         return levelButton;

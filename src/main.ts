@@ -10,6 +10,11 @@ const assetsLoader = new AssetsLoader(gameKaboomCtx);
 
 assetsLoader.loadSprites();
 
+const data = gameKaboomCtx.getData('completedLevels');
+if (data == null) {
+    gameKaboomCtx.setData('completedLevels', [1]);
+}
+
 const gameScene = new GameScene(gameKaboomCtx);
 const selectLevelScene = new SelectLevelScene(gameKaboomCtx, levelLoader);
 const levelWinScene = new LevelWinScene(gameKaboomCtx);

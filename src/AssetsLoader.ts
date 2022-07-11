@@ -52,11 +52,15 @@ export class AssetsLoader {
             // Select level scene sprites
             await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',
                 {
-                    sliceX: 3,
+                    sliceX: 5,
                     anims: {
                         default: 0,
-                        click: 1,
-                        selected: 2
+                        click: {
+                            from: 0,
+                            to: 2
+                        },
+                        selected: 3,
+                        disabled: 4
                     }
                 }
             );

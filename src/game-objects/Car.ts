@@ -95,7 +95,7 @@ export class Car {
         });
 
         this.kaboomCtx.onMouseMove(() => {
-            if (!this.gameObject) return;
+            if (!this.gameObject || this.isLock) return;
 
             this.kaboomCtx.cursor(this.isDragging ? 'pointer' : 'default');
             this.gameObject.color = this.isDragging
@@ -104,7 +104,7 @@ export class Car {
         });
 
         this.gameObject.onHover(() => {
-            if (!this.gameObject) return;
+            if (!this.gameObject || this.isLock) return;
             this.kaboomCtx.cursor('pointer');
             this.gameObject.color = this.kaboomCtx.rgb(230, 230, 230);
         });

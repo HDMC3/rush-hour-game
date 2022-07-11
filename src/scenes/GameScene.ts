@@ -121,6 +121,11 @@ export class GameScene {
                 if (this.onMoveCarEvent) {
                     this.onMoveCarEvent();
                 }
+                const levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
+                if (level && level.levelNumber !== 40 && !levelsData.includes(level.levelNumber + 1)) {
+                    levelsData.push(level.levelNumber + 1);
+                    this.kaboomCtx.setData('completedLevels', levelsData);
+                }
                 this.kaboomCtx.go(LevelWinScene.id, level);
             });
         });
