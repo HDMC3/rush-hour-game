@@ -3,6 +3,7 @@ import { gameKaboomCtx } from './kaboomCtx';
 import { GameScene } from './scenes/GameScene';
 import { LevelLoader } from './scenes/LevelLoader';
 import { LevelWinScene } from './scenes/LevelWinScene';
+import { MainMenuScene } from './scenes/MainMenuScene';
 import { SelectLevelScene } from './scenes/SelectLevelScene';
 
 const levelLoader = new LevelLoader();
@@ -18,9 +19,11 @@ if (data == null) {
 const gameScene = new GameScene(gameKaboomCtx);
 const selectLevelScene = new SelectLevelScene(gameKaboomCtx, levelLoader);
 const levelWinScene = new LevelWinScene(gameKaboomCtx);
+const mainMenuScene = new MainMenuScene(gameKaboomCtx, levelLoader);
 
 gameKaboomCtx.scene(GameScene.id, gameScene.sceneDef);
 gameKaboomCtx.scene(SelectLevelScene.id, selectLevelScene.sceneDef);
 gameKaboomCtx.scene(LevelWinScene.id, levelWinScene.sceneDef);
+gameKaboomCtx.scene(MainMenuScene.id, mainMenuScene.sceneDef);
 
-gameKaboomCtx.go(GameScene.id);
+gameKaboomCtx.go(MainMenuScene.id);

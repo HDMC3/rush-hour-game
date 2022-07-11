@@ -9,6 +9,7 @@ import { MovesIndicator } from '../ui/MovesIndicator';
 import { SceneHeader } from '../ui/SceneHeader';
 import { TimeIndicator } from '../ui/TimeIndicator';
 import { LevelWinScene } from './LevelWinScene';
+import { MainMenuScene } from './MainMenuScene';
 import { SelectLevelScene } from './SelectLevelScene';
 
 export class GameScene {
@@ -17,15 +18,19 @@ export class GameScene {
     private startButton: Button;
     private pauseButton: Button;
     private selectLevelButton: Button;
+    private initialMenuButton: Button;
     private timeIndicator: TimeIndicator;
     private movesIndicator: MovesIndicator;
     private onMoveCarEvent?: EventCanceller;
+
+    private headerHeight = 76;
 
     constructor(private kaboomCtx: KaboomCtx) {
         this.cars = [];
         this.startButton = new Button(this.kaboomCtx);
         this.pauseButton = new Button(this.kaboomCtx);
         this.selectLevelButton = new Button(this.kaboomCtx);
+        this.initialMenuButton = new Button(this.kaboomCtx);
         this.timeIndicator = new TimeIndicator(this.kaboomCtx);
         this.movesIndicator = new MovesIndicator(this.kaboomCtx);
     }
@@ -103,7 +108,24 @@ export class GameScene {
                 if (this.onMoveCarEvent) {
                     this.onMoveCarEvent();
                 }
-                this.kaboomCtx.go(SelectLevelScene.id);
+                this.kaboomCtx.go(SelectLevelScene.id, level);
+            }
+        );
+
+        this.initialMenuButton.addButton(
+            'initial-menu-button',
+            'left',
+            this.kaboomCtx.vec2(10, this.headerHeight / 2),
+            'initial-menu-button-sprite',
+            () => {
+                this.clearCars();
+                this.clearButtons();
+                this.timeIndicator.destroy();
+                this.movesIndicator.destroy();
+                if (this.onMoveCarEvent) {
+                    this.onMoveCarEvent();
+                }
+                this.kaboomCtx.go(MainMenuScene.id);
             }
         );
 

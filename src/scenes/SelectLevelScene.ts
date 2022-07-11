@@ -36,11 +36,13 @@ export class SelectLevelScene {
         this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
     }
 
-    sceneDef: SceneDef = async() => {
+    sceneDef: SceneDef = async(currentLevel?: PuzzleLevel) => {
 
         this.levelsData = this.kaboomCtx.getData<number[]>('completedLevels');
 
         SceneHeader.addHeader(this.kaboomCtx, 'NIVELES', this.headerHeight);
+
+        this.puzzleLevelSelected = currentLevel;
 
         this.backButton.addButton(
             'back-button',
