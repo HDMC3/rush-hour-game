@@ -10,7 +10,7 @@ export class MovesIndicator {
     }
 
     addMovesIndicator(position: Vec2) {
-        position.x += 192 / 2;
+        position.x -= 192 / 2;
         position.y += 130 / 2;
         this.gameObject = this.kaboomCtx.add([
             this.kaboomCtx.sprite('time-and-moves-indicator-sprite'),

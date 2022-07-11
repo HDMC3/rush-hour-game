@@ -39,7 +39,7 @@ export class GameScene {
 
         const timeIndicatorPos = this.kaboomCtx.vec2(50, BoardCoordinates.Y);
         this.timeIndicator.addTimeIndicator(timeIndicatorPos);
-        const movesIndicatorPos = this.kaboomCtx.vec2(50, BoardCoordinates.Y + 150);
+        const movesIndicatorPos = this.kaboomCtx.vec2(this.kaboomCtx.width() - 50, BoardCoordinates.Y);
         this.movesIndicator.addMovesIndicator(movesIndicatorPos);
 
         const startButtonPos = this.kaboomCtx.vec2(this.kaboomCtx.center().x - BoardMainMeasurements.BOARD_SIDE_LENGTH / 4, BoardCoordinates.Y + BoardMainMeasurements.BOARD_SIDE_LENGTH + 20);
