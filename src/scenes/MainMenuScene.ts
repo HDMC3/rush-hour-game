@@ -1,6 +1,7 @@
 import { KaboomCtx, SceneDef } from 'kaboom';
 import { Button } from '../ui/Button';
 import { GameScene } from './GameScene';
+import { InstructionsScene } from './InstructionsScene';
 import { LevelLoader } from './LevelLoader';
 
 export class MainMenuScene {
@@ -49,7 +50,9 @@ export class MainMenuScene {
             'center',
             this.kaboomCtx.vec2(this.kaboomCtx.center().x, this.kaboomCtx.center().y + 160),
             'instructions-button-sprite',
-            () => {}
+            () => {
+                this.kaboomCtx.go(InstructionsScene.id);
+            }
         );
     };
 }
