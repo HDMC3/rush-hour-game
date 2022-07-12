@@ -37,7 +37,7 @@ export class GameScene {
 
     readonly sceneDef: SceneDef = async(level?: PuzzleLevel) => {
 
-        SceneHeader.addHeader(this.kaboomCtx, level ? `NIVEL ${level.levelNumber}` : 'NIVEL NO SELECCIONADO');
+        SceneHeader.addHeader(this.kaboomCtx, level ? `NIVEL ${level.levelNumber}` : 'SIN NIVEL');
 
         const board = new Board(this.kaboomCtx);
         await board.addGameObject();
