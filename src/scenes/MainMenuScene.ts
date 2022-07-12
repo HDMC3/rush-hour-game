@@ -3,18 +3,18 @@ import { Button } from '../ui/Button';
 import { GameScene } from './GameScene';
 import { InstructionsScene } from './InstructionsScene';
 import { LevelLoader } from './LevelLoader';
-import { PunctuationsScene } from './PunctuationsScene';
+import { ScoresScene } from './ScoresScene';
 
 export class MainMenuScene {
     static readonly id = 'MainMenuScene';
     private playButton: Button;
     private instructionsButton: Button;
-    private punctuationsButton: Button;
+    private scoresButton: Button;
 
     constructor(private kaboomCtx: KaboomCtx, private levelLoader: LevelLoader) {
         this.playButton = new Button(this.kaboomCtx);
         this.instructionsButton = new Button(this.kaboomCtx);
-        this.punctuationsButton = new Button(this.kaboomCtx);
+        this.scoresButton = new Button(this.kaboomCtx);
     }
 
     readonly sceneDef: SceneDef = () => {
@@ -48,13 +48,13 @@ export class MainMenuScene {
             }
         );
 
-        this.punctuationsButton.addButton(
-            'punctuations-button',
+        this.scoresButton.addButton(
+            'scores-button',
             'center',
             this.kaboomCtx.vec2(this.kaboomCtx.center().x, this.kaboomCtx.center().y + 130),
-            'punctuations-button-sprite',
+            'scores-button-sprite',
             () => {
-                this.kaboomCtx.go(PunctuationsScene.id);
+                this.kaboomCtx.go(ScoresScene.id);
             }
         );
 

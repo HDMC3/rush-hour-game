@@ -51,11 +51,11 @@ export class AssetsLoader {
             await this.kaboomCtx.loadSprite('play-button-sprite', 'ui-sprites/buttons/play-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('instructions-button-sprite', 'ui-sprites/buttons/instructions-button-sprite.png', buttonSpritesOptions);
             await this.kaboomCtx.loadSprite('initial-menu-button-sprite', 'ui-sprites/buttons/initial-menu-button-sprite.png', buttonSpritesOptions);
-            await this.kaboomCtx.loadSprite('punctuations-button-sprite', 'ui-sprites/buttons/punctuations-button-sprite.png', buttonSpritesOptions);
-            await this.kaboomCtx.loadSprite('beginner-punctuation-button-sprite', 'ui-sprites/buttons/beginner-punctuation-button-sprite.png', buttonSpritesOptions);
-            await this.kaboomCtx.loadSprite('intermediate-punctuation-button-sprite', 'ui-sprites/buttons/intermediate-punctuation-button-sprite.png', buttonSpritesOptions);
-            await this.kaboomCtx.loadSprite('advanced-punctuation-button-sprite', 'ui-sprites/buttons/advanced-punctuation-button-sprite.png', buttonSpritesOptions);
-            await this.kaboomCtx.loadSprite('expert-punctuation-button-sprite', 'ui-sprites/buttons/expert-punctuation-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('scores-button-sprite', 'ui-sprites/buttons/scores-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('beginner-scores-button-sprite', 'ui-sprites/buttons/beginner-scores-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('intermediate-scores-button-sprite', 'ui-sprites/buttons/intermediate-scores-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('advanced-scores-button-sprite', 'ui-sprites/buttons/advanced-scores-button-sprite.png', buttonSpritesOptions);
+            await this.kaboomCtx.loadSprite('expert-scores-button-sprite', 'ui-sprites/buttons/expert-scores-button-sprite.png', buttonSpritesOptions);
 
             // Select level scene sprites
             await this.kaboomCtx.loadSprite('level-button-sprite', 'ui-sprites/select-level-scene/level-button-sprite.png',

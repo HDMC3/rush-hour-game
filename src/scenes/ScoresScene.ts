@@ -4,8 +4,8 @@ import { Button } from '../ui/Button';
 import { SceneHeader } from '../ui/SceneHeader';
 import { MainMenuScene } from './MainMenuScene';
 
-export class PunctuationsScene {
-    static readonly id = 'PunctuationsScene';
+export class ScoresScene {
+    static readonly id = 'ScoresScene';
     private headerHeight = 76;
     private beginnerButton: Button;
     private intermediateButton: Button;
@@ -34,54 +34,54 @@ export class PunctuationsScene {
             }
         );
 
-        this.showPunctuations(this.kaboomCtx.color(119, 217, 97).color, PuzzleLevelDifficulty.BEGINNER);
+        this.showScores(this.kaboomCtx.color(119, 217, 97).color, PuzzleLevelDifficulty.BEGINNER);
 
         this.beginnerButton.addButton(
-            'beginner-punctuation-button',
+            'beginner-scores-button',
             'left',
             this.kaboomCtx.vec2(100, this.headerHeight + 40),
-            'beginner-punctuation-button-sprite',
+            'beginner-scores-button-sprite',
             () => {
                 const beginnerColor = this.kaboomCtx.color(119, 217, 97).color;
-                this.showPunctuations(beginnerColor, PuzzleLevelDifficulty.BEGINNER);
+                this.showScores(beginnerColor, PuzzleLevelDifficulty.BEGINNER);
             }
         );
 
         this.intermediateButton.addButton(
-            'intermediate-punctuation-button',
+            'intermediate-scores-button',
             'left',
             this.kaboomCtx.vec2(this.kaboomCtx.width() * 0.40 - 35, this.headerHeight + 40),
-            'intermediate-punctuation-button-sprite',
+            'intermediate-scores-button-sprite',
             () => {
                 const intermediateColor = this.kaboomCtx.color(255, 169, 84).color;
-                this.showPunctuations(intermediateColor, PuzzleLevelDifficulty.INTERMEDIATE);
+                this.showScores(intermediateColor, PuzzleLevelDifficulty.INTERMEDIATE);
             }
         );
 
         this.advancedButton.addButton(
-            'advanced-punctuation-button',
+            'advanced-scores-button',
             'left',
             this.kaboomCtx.vec2(this.kaboomCtx.width() * 0.60 - 20, this.headerHeight + 40),
-            'advanced-punctuation-button-sprite',
+            'advanced-scores-button-sprite',
             () => {
                 const advancedColor = this.kaboomCtx.color(32, 157, 232).color;
-                this.showPunctuations(advancedColor, PuzzleLevelDifficulty.ADVANCED);
+                this.showScores(advancedColor, PuzzleLevelDifficulty.ADVANCED);
             }
         );
 
         this.expertButton.addButton(
-            'expert-punctuation-button',
+            'expert-scores-button',
             'left',
             this.kaboomCtx.vec2(this.kaboomCtx.width() * 0.80 - 30, this.headerHeight + 40),
-            'expert-punctuation-button-sprite',
+            'expert-scores-button-sprite',
             () => {
                 const expertColor = this.kaboomCtx.color(238, 77, 85).color;
-                this.showPunctuations(expertColor, PuzzleLevelDifficulty.EXPERT);
+                this.showScores(expertColor, PuzzleLevelDifficulty.EXPERT);
             }
         );
     };
 
-    private showPunctuations(color: Color, difficulty: PuzzleLevelDifficulty) {
+    private showScores(color: Color, difficulty: PuzzleLevelDifficulty) {
         this.kaboomCtx.destroyAll('gameobj-data-level');
 
         const completedLevels = this.kaboomCtx.getData<any[]>('completedLevels');

@@ -5,7 +5,7 @@ import { InstructionsScene } from './scenes/InstructionsScene';
 import { LevelLoader } from './scenes/LevelLoader';
 import { LevelWinScene } from './scenes/LevelWinScene';
 import { MainMenuScene } from './scenes/MainMenuScene';
-import { PunctuationsScene } from './scenes/PunctuationsScene';
+import { ScoresScene } from './scenes/ScoresScene';
 import { SelectLevelScene } from './scenes/SelectLevelScene';
 
 const levelLoader = new LevelLoader();
@@ -28,13 +28,13 @@ const selectLevelScene = new SelectLevelScene(gameKaboomCtx, levelLoader);
 const levelWinScene = new LevelWinScene(gameKaboomCtx);
 const mainMenuScene = new MainMenuScene(gameKaboomCtx, levelLoader);
 const instructionsScene = new InstructionsScene(gameKaboomCtx);
-const punctuationsScene = new PunctuationsScene(gameKaboomCtx);
+const scoresScene = new ScoresScene(gameKaboomCtx);
 
 gameKaboomCtx.scene(GameScene.id, gameScene.sceneDef);
 gameKaboomCtx.scene(SelectLevelScene.id, selectLevelScene.sceneDef);
 gameKaboomCtx.scene(LevelWinScene.id, levelWinScene.sceneDef);
 gameKaboomCtx.scene(MainMenuScene.id, mainMenuScene.sceneDef);
 gameKaboomCtx.scene(InstructionsScene.id, instructionsScene.sceneDef);
-gameKaboomCtx.scene(PunctuationsScene.id, punctuationsScene.sceneDef);
+gameKaboomCtx.scene(ScoresScene.id, scoresScene.sceneDef);
 
 gameKaboomCtx.go(MainMenuScene.id);
