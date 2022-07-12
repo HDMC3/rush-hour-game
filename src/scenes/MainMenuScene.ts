@@ -3,6 +3,7 @@ import { Button } from '../ui/Button';
 import { GameScene } from './GameScene';
 import { InstructionsScene } from './InstructionsScene';
 import { LevelLoader } from './LevelLoader';
+import { PunctuationsScene } from './PunctuationsScene';
 
 export class MainMenuScene {
     static readonly id = 'MainMenuScene';
@@ -53,7 +54,7 @@ export class MainMenuScene {
             this.kaboomCtx.vec2(this.kaboomCtx.center().x, this.kaboomCtx.center().y + 130),
             'punctuations-button-sprite',
             () => {
-                console.log(this.kaboomCtx.getData('completedLevels'));
+                this.kaboomCtx.go(PunctuationsScene.id);
             }
         );
 
