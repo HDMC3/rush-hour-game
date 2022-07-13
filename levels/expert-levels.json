@@ -1,0 +1,1230 @@
+[
+    {
+        "levelNumber": 31,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "O",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 3
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "AR1",
+            "DU2",
+            "XL1",
+            "QU2",
+            "FR3",
+            "QD2",
+            "XR1",
+            "DD4",
+            "XL1",
+            "AL1",
+            "QU3",
+            "EL3",
+            "BD1",
+            "CL1",
+            "PU1",
+            "FR1",
+            "BD1",
+            "QD3",
+            "XR3",
+            "QU3",
+            "ER1",
+            "DU3",
+            "EL1",
+            "QD3",
+            "AR1",
+            "DU1",
+            "XL3",
+            "BU1",
+            "QU2",
+            "FL4",
+            "BD1",
+            "QD2",
+            "XR3",
+            "QU1",
+            "RL1",
+            "PD2",
+            "XR3"
+        ]
+    },
+    {
+        "levelNumber": 32,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "K",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 3
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "BD1",
+            "CL1",
+            "PU3",
+            "FR1",
+            "KU1",
+            "HR4",
+            "KD1",
+            "FL1",
+            "PD1",
+            "CR1",
+            "BU1",
+            "DD1",
+            "EL1",
+            "OD3",
+            "XR3",
+            "OU3",
+            "ER1",
+            "DU3",
+            "EL1",
+            "OD3",
+            "AR1",
+            "DU1",
+            "XL3",
+            "BD1",
+            "CL1",
+            "PU1",
+            "FR1",
+            "KU1",
+            "OU1",
+            "HL4",
+            "KD1",
+            "FL1",
+            "PD3",
+            "CR1",
+            "BU1",
+            "OD1",
+            "XR6"
+        ]
+    },
+    {
+        "levelNumber": 33,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 4
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "B",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "I",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "carId": "R",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "G",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "H",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 3
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "BL1",
+            "PU3",
+            "ER1",
+            "GU3",
+            "QR1",
+            "ID1",
+            "DL1",
+            "EL2",
+            "HU3",
+            "QR2",
+            "FR3",
+            "ER2",
+            "RD3",
+            "BL1",
+            "HU1",
+            "GD2",
+            "XR3",
+            "AD1",
+            "BL2",
+            "RU3",
+            "DR1",
+            "IU3",
+            "DL1",
+            "RD3",
+            "BR2",
+            "AU1",
+            "IU1",
+            "XL3",
+            "GU1",
+            "RU2",
+            "FL4",
+            "GD1",
+            "RD2",
+            "XR3",
+            "RU1",
+            "QL3",
+            "GD1",
+            "EL1",
+            "PD3",
+            "XR3"
+        ]
+    },
+    {
+        "levelNumber": 34,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "I",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 2
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "RL2",
+            "PU1",
+            "CU1",
+            "HR1",
+            "DD1",
+            "QR3",
+            "XR1",
+            "AD3",
+            "XL1",
+            "EU3",
+            "IR1",
+            "AD1",
+            "QL3",
+            "PD1",
+            "RL1",
+            "BU1",
+            "DU2",
+            "FL3",
+            "DD2",
+            "BD1",
+            "RR3",
+            "EU1",
+            "QR2",
+            "XR1",
+            "AU4",
+            "XL1",
+            "ED1",
+            "RL2",
+            "PU1",
+            "IL1",
+            "FL1",
+            "QR1",
+            "ED3",
+            "QL3",
+            "DU1",
+            "HL1",
+            "PD3",
+            "CU1",
+            "XR1",
+            "AD1",
+            "RL1",
+            "BU1",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 35,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 4
+            },
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 0
+            },
+            {
+                "carId": "K",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "PD1",
+            "FU3",
+            "AR1",
+            "BU1",
+            "GR1",
+            "KD1",
+            "QL1",
+            "EU2",
+            "GR3",
+            "DR3",
+            "ED2",
+            "BD1",
+            "AL1",
+            "PU1",
+            "QR3",
+            "OD3",
+            "XR1",
+            "KU4",
+            "XL1",
+            "OU3",
+            "QL3",
+            "PD1",
+            "AR1",
+            "BU1",
+            "EU2",
+            "GL4",
+            "DL4",
+            "ED2",
+            "BD1",
+            "AL1",
+            "PU1",
+            "FD3",
+            "QR3",
+            "OD3",
+            "AL2",
+            "BU1",
+            "XR3",
+            "KD1",
+            "AL1",
+            "OU3",
+            "QL1",
+            "PD3",
+            "XR3"
+        ]
+    },
+    {
+        "levelNumber": 36,
+        "cars": [
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "P",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "Q",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 1
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 3
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "DD1",
+            "RR2",
+            "OD1",
+            "PL1",
+            "AL1",
+            "QU1",
+            "RR1",
+            "XR1",
+            "CR1",
+            "RU3",
+            "RL2",
+            "QD1",
+            "AR1",
+            "PR1",
+            "OU1",
+            "RL1",
+            "DU1",
+            "GR4",
+            "DD1",
+            "RR2",
+            "OD1",
+            "PL1",
+            "AL1",
+            "QU1",
+            "RR1",
+            "ED3",
+            "BD3",
+            "RL2",
+            "QD1",
+            "AR1",
+            "PR1",
+            "OU1",
+            "RL1",
+            "XL2",
+            "CL2",
+            "DU3",
+            "GL1",
+            "FL1",
+            "QD2",
+            "RR1",
+            "OD1",
+            "PL1",
+            "DU1",
+            "XR5"
+        ]
+    },
+    {
+        "levelNumber": 37,
+        "cars": [
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "carId": "R",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 3
+            },
+            {
+                "carId": "C",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "F",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 5
+            },
+            {
+                "carId": "Q",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "GR1",
+            "QD1",
+            "XL1",
+            "BD1",
+            "CL2",
+            "PU1",
+            "OU1",
+            "RR2",
+            "BD2",
+            "XR1",
+            "DR1",
+            "QU2",
+            "GL1",
+            "BD1",
+            "RL2",
+            "OD1",
+            "CR1",
+            "AR1",
+            "QU1",
+            "RL1",
+            "EU3",
+            "RR1",
+            "QD2",
+            "AL1",
+            "CL1",
+            "OU1",
+            "RR2",
+            "BU1",
+            "GR1",
+            "QD1",
+            "XL1",
+            "DL1",
+            "BU2",
+            "HL1",
+            "FL2",
+            "RL2",
+            "PD3",
+            "OD2",
+            "CR2",
+            "EU1",
+            "BU1",
+            "XR2",
+            "QU1",
+            "GL1",
+            "HL1",
+            "OD1",
+            "XR4"
+        ]
+    },
+    {
+        "levelNumber": 38,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "B",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 1
+            },
+            {
+                "carId": "O",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 4
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "R",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "OL1",
+            "RU2",
+            "GR1",
+            "ER1",
+            "CD2",
+            "BR2",
+            "DU1",
+            "FU1",
+            "QL3",
+            "CD1",
+            "EL1",
+            "RD1",
+            "OR1",
+            "DU1",
+            "XR1",
+            "AD3",
+            "XL1",
+            "DD1",
+            "OL1",
+            "RU1",
+            "ER1",
+            "CU2",
+            "QR3",
+            "FD1",
+            "DD1",
+            "BL3",
+            "CU1",
+            "DU1",
+            "AD1",
+            "EL4",
+            "RD1",
+            "CD1",
+            "DD1",
+            "BR3",
+            "OR1",
+            "DU2",
+            "ER1",
+            "XR1",
+            "AU4",
+            "EL1",
+            "XL1",
+            "FU2",
+            "QL1",
+            "GL4",
+            "RD2",
+            "CD1",
+            "FD1",
+            "XR6"
+        ]
+    },
+    {
+        "levelNumber": 39,
+        "cars": [
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "carId": "D",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "I",
+                "orientation": "horizontal",
+                "x": 2,
+                "y": 5
+            },
+            {
+                "carId": "O",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 0
+            },
+            {
+                "carId": "E",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "carId": "G",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 4
+            },
+            {
+                "carId": "A",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 1
+            },
+            {
+                "carId": "R",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 2
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "IR2",
+            "HR1",
+            "CD2",
+            "AD1",
+            "OL1",
+            "RU2",
+            "HR1",
+            "ER1",
+            "BD3",
+            "EL1",
+            "RD1",
+            "OR1",
+            "AU1",
+            "XR3",
+            "AD1",
+            "OL1",
+            "RU1",
+            "ER1",
+            "DR2",
+            "GU4",
+            "FU4",
+            "DL2",
+            "EL1",
+            "RD1",
+            "OR1",
+            "AU1",
+            "XL3",
+            "AD1",
+            "OL1",
+            "RU1",
+            "ER1",
+            "BU3",
+            "EL1",
+            "RD1",
+            "OR1",
+            "AU1",
+            "CU2",
+            "HL4",
+            "CD1",
+            "AD1",
+            "OL1",
+            "RU1",
+            "IL3",
+            "ER1",
+            "BD3",
+            "EL1",
+            "RD3",
+            "OR1",
+            "AU1",
+            "XR6"
+        ]
+    },
+    {
+        "levelNumber": 40,
+        "cars": [
+            {
+                "carId": "O",
+                "orientation": "vertical",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "carId": "Q",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "carId": "H",
+                "orientation": "horizontal",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "carId": "A",
+                "orientation": "horizontal",
+                "x": 1,
+                "y": 0
+            },
+            {
+                "carId": "C",
+                "orientation": "vertical",
+                "x": 1,
+                "y": 1
+            },
+            {
+                "carId": "D",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "carId": "F",
+                "orientation": "vertical",
+                "x": 2,
+                "y": 4
+            },
+            {
+                "carId": "X",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 2
+            },
+            {
+                "carId": "E",
+                "orientation": "vertical",
+                "x": 3,
+                "y": 3
+            },
+            {
+                "carId": "I",
+                "orientation": "horizontal",
+                "x": 3,
+                "y": 5
+            },
+            {
+                "carId": "B",
+                "orientation": "vertical",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "carId": "G",
+                "orientation": "horizontal",
+                "x": 4,
+                "y": 4
+            },
+            {
+                "carId": "P",
+                "orientation": "vertical",
+                "x": 5,
+                "y": 1
+            }
+        ],
+        "difficulty": 3,
+        "solution": [
+            "PU1",
+            "IR1",
+            "ED1",
+            "QR3",
+            "FU1",
+            "HR1",
+            "OD3",
+            "AL1",
+            "DU1",
+            "CD2",
+            "XL3",
+            "BD1",
+            "DD1",
+            "AR3",
+            "DU1",
+            "XR2",
+            "OU3",
+            "HL1",
+            "FD1",
+            "CU3",
+            "QL3",
+            "PD1",
+            "XL1",
+            "AR1",
+            "EU4",
+            "QR2",
+            "XR1",
+            "CD3",
+            "XL1",
+            "ED1",
+            "AL1",
+            "PU1",
+            "QR1",
+            "FU1",
+            "HR1",
+            "OD3",
+            "XL1",
+            "DD1",
+            "AL3",
+            "BU1",
+            "EU1",
+            "DU1",
+            "XR3",
+            "OU1",
+            "HL1",
+            "FD1",
+            "IL1",
+            "GL1",
+            "QL1",
+            "PD3",
+            "XR3"
+        ]
+    }
+]
