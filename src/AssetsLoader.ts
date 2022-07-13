@@ -11,7 +11,7 @@ export class AssetsLoader {
             // Car sprites
             for (const entrie of Object.entries(CAR_SPRITE_DATA)) {
                 await this.kaboomCtx.loadSprite(entrie[1].horizontal.name, `car-sprites/${entrie[1].horizontal.sprite}`);
-                await this.kaboomCtx.loadSprite(entrie[1].vertical.name, `car-sprites/${entrie[1].vertical.sprite}/`);
+                await this.kaboomCtx.loadSprite(entrie[1].vertical.name, `car-sprites/${entrie[1].vertical.sprite}`);
             }
 
             // Board sprites
