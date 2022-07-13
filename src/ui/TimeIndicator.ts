@@ -6,7 +6,8 @@ export class TimeIndicator {
     private minutes: number;
     private seconds: number;
     private gameObject?: GameObj<SpriteComp | OriginComp | TextComp | PosComp>;
-    private interval?: number;
+    // eslint-disable-next-line no-undef
+    private interval?: number | NodeJS.Timeout;
 
     constructor(private kaboomCtx: KaboomCtx) {
         this.active = false;
