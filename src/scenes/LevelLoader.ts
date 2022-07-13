@@ -28,7 +28,7 @@ export class LevelLoader {
     async loadLevelsByDifficulty(dificulty: PuzzleLevelDifficulty) {
         let levels: PuzzleLevel[] = [];
         try {
-            const response = await fetch(`../assets/levels/${this.fileLevelNames[dificulty]}`);
+            const response = await fetch(`${import.meta.env.BASE_URL}levels/${this.fileLevelNames[dificulty]}`);
             levels = await response.json();
         } catch (error) {
             alert('Problema al cargar niveles');
