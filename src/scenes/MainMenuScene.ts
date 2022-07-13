@@ -42,7 +42,7 @@ export class MainMenuScene {
             async() => {
                 const levelsData = this.kaboomCtx.getData<number[]>('availableLevels');
                 const currentLevel = levelsData[levelsData.length - 1];
-                const difficulty = Math.floor(currentLevel === 40 ? 3 : currentLevel / 10);
+                const difficulty = Math.floor((currentLevel - 1) / 10);
                 const level = await this.levelLoader.loadLevel(currentLevel, difficulty);
                 this.kaboomCtx.go(GameScene.id, level);
             }
