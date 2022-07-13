@@ -3,6 +3,7 @@ import { BoardCoordinates, BoardMainMeasurements } from '../constants/board-cons
 import { CAR_OBJECT_NAMES } from '../constants/car-constants';
 import { Board } from '../game-objects/Board';
 import { Car } from '../game-objects/Car';
+import { CompletedLevelData } from '../types/CompletedLevelData';
 import { PuzzleLevel } from '../types/PuzzleLevel';
 import { Button } from '../ui/Button';
 import { MovesIndicator } from '../ui/MovesIndicator';
@@ -130,16 +131,28 @@ export class GameScene {
         );
 
         this.kaboomCtx.onCollide(CAR_OBJECT_NAMES.X, 'exit', () => {
+            if (!level) return;
+            this.lockCars();
             const xCar = this.cars.find(car => car.carId === 'X');
-            const completedLevels = this.kaboomCtx.getData<any[]>('completedLevels');
-            completedLevels.push({
-                levelNumber: level?.levelNumber,
-                time: this.timeIndicator.time,
-                moves: this.movesIndicator.movesCount
-            });
+            let completedLevels = this.kaboomCtx.getData<CompletedLevelData[]>('completedLevels');
+            const completedCurrentLevel = completedLevels.find(l => l.levelNumber === level.levelNumber);
+
+            if (!completedCurrentLevel) {
+                completedLevels.push({
+                    levelNumber: level.levelNumber,
+                    time: this.timeIndicator.time,
+                    moves: this.movesIndicator.movesCount + 1
+                });
+            } else if (this.movesIndicator.movesCount + 1 < completedCurrentLevel.moves) {
+                completedLevels = completedLevels.map(l => {
+                    l.time = completedCurrentLevel.levelNumber === l.levelNumber ? this.timeIndicator.time : l.time;
+                    l.moves = completedCurrentLevel.levelNumber === l.levelNumber ? this.movesIndicator.movesCount + 1 : l.moves;
+                    return l;
+                });
+            }
+
             this.kaboomCtx.setData('completedLevels', completedLevels);
             if (xCar) {
-                this.lockCars();
                 xCar.startWinAnimation();
             }
             this.kaboomCtx.wait(0.5, () => {

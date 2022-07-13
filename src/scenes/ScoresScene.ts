@@ -1,5 +1,6 @@
 import { Color, KaboomCtx, SceneDef } from 'kaboom';
 import { PuzzleLevelDifficulty } from '../constants/puzzle-level-contants';
+import { CompletedLevelData } from '../types/CompletedLevelData';
 import { Button } from '../ui/Button';
 import { SceneHeader } from '../ui/SceneHeader';
 import { MainMenuScene } from './MainMenuScene';
@@ -84,7 +85,7 @@ export class ScoresScene {
     private showScores(color: Color, difficulty: PuzzleLevelDifficulty) {
         this.kaboomCtx.destroyAll('gameobj-data-level');
 
-        const completedLevels = this.kaboomCtx.getData<any[]>('completedLevels');
+        const completedLevels = this.kaboomCtx.getData<CompletedLevelData[]>('completedLevels');
 
         const levelRange = {
             0: {
