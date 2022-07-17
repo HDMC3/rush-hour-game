@@ -3,6 +3,7 @@ import { BoardCoordinates, BoardMainMeasurements } from '../constants/board-cons
 import { CAR_OBJECT_NAMES } from '../constants/car-constants';
 import { Board } from '../game-objects/Board';
 import { Car } from '../game-objects/Car';
+import { CarId } from '../types/CarId';
 import { CompletedLevelData } from '../types/CompletedLevelData';
 import { PuzzleLevel } from '../types/PuzzleLevel';
 import { Button } from '../ui/Button';
@@ -23,6 +24,8 @@ export class GameScene {
     private timeIndicator: TimeIndicator;
     private movesIndicator: MovesIndicator;
     private onMoveCarEvent?: EventCanceller;
+    private onInitCarDrag?: EventCanceller;
+    private onEndCarDrag?: EventCanceller;
 
     private headerHeight = 76;
 
@@ -74,6 +77,16 @@ export class GameScene {
                     this.onMoveCarEvent = this.kaboomCtx.on('movecar', 'car', () => {
                         this.movesIndicator.increment();
                     });
+                    this.onInitCarDrag = this.kaboomCtx.on('initdrag', 'car', (_, carId: CarId) => {
+                        this.cars.forEach(car => {
+                            if (car.carId !== carId) car.lock();
+                        });
+                    });
+                    this.onEndCarDrag = this.kaboomCtx.on('enddrag', 'car', () => {
+                        this.cars.forEach(car => {
+                            car.unlock();
+                        });
+                    });
                 }
             );
 
@@ -89,6 +102,8 @@ export class GameScene {
                     this.pauseButton.disable();
                     this.selectLevelButton.enable();
                     if (this.onMoveCarEvent) this.onMoveCarEvent();
+                    if (this.onInitCarDrag) this.onInitCarDrag();
+                    if (this.onEndCarDrag) this.onEndCarDrag();
                 }
             );
             this.pauseButton.disable();
@@ -106,9 +121,9 @@ export class GameScene {
                 this.clearButtons();
                 this.timeIndicator.destroy();
                 this.movesIndicator.destroy();
-                if (this.onMoveCarEvent) {
-                    this.onMoveCarEvent();
-                }
+                if (this.onMoveCarEvent) this.onMoveCarEvent();
+                if (this.onInitCarDrag) this.onInitCarDrag();
+                if (this.onEndCarDrag) this.onEndCarDrag();
                 this.kaboomCtx.go(SelectLevelScene.id, level);
             }
         );
@@ -123,9 +138,9 @@ export class GameScene {
                 this.clearButtons();
                 this.timeIndicator.destroy();
                 this.movesIndicator.destroy();
-                if (this.onMoveCarEvent) {
-                    this.onMoveCarEvent();
-                }
+                if (this.onMoveCarEvent) this.onMoveCarEvent();
+                if (this.onInitCarDrag) this.onInitCarDrag();
+                if (this.onEndCarDrag) this.onEndCarDrag();
                 this.kaboomCtx.go(MainMenuScene.id);
             }
         );
@@ -160,9 +175,9 @@ export class GameScene {
                 this.clearButtons();
                 this.timeIndicator.destroy();
                 this.movesIndicator.destroy();
-                if (this.onMoveCarEvent) {
-                    this.onMoveCarEvent();
-                }
+                if (this.onMoveCarEvent) this.onMoveCarEvent();
+                if (this.onInitCarDrag) this.onInitCarDrag();
+                if (this.onEndCarDrag) this.onEndCarDrag();
                 const levelsData = this.kaboomCtx.getData<number[]>('availableLevels');
                 if (level && level.levelNumber !== 40 && !levelsData.includes(level.levelNumber + 1)) {
                     levelsData.push(level.levelNumber + 1);

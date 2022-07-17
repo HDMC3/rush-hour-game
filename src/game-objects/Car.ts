@@ -58,6 +58,7 @@ export class Car {
 
             this.isDragging = true;
             if (this.gameObject) {
+                this.gameObject.trigger('initdrag', this.carId);
                 this.dragOffset = this.kaboomCtx.mousePos().sub(this.gameObject.pos);
             }
         });
@@ -87,6 +88,7 @@ export class Car {
             this.isDragging = false;
             this.kaboomCtx.cursor('default');
             if (!this.gameObject) return;
+            this.gameObject.trigger('enddrag');
             if (this.currentPosition.x !== this.gameObject.pos.x || this.currentPosition.y !== this.gameObject.pos.y) {
                 this.gameObject.trigger('movecar');
                 this.currentPosition = this.kaboomCtx.vec2(this.gameObject.pos.x, this.gameObject.pos.y);
